@@ -73,7 +73,7 @@
         .title span,
         .description a.tdn {
             color: #722929;
-            font-variant: small-caps;
+            font-weight: 500;
             text-decoration: none;
         }
 
@@ -152,16 +152,5 @@
             <a href="https://discord.com/users/1264934627660005448" target="_blank" class="button">Discord</a>
         </div>
     </div>
-    <script>
-        document.addEventListener('mousemove', (event) => {
-            const x = event.clientX / window.innerWidth * 100;
-            const y = event.clientY / window.innerHeight * 100;
-
-            const gradient = `linear-gradient(${x + y}deg, #ff0000, #00ff00)`;
-            document.querySelectorAll('.title span, .description a.tdn').forEach(el => {
-                el.style.background = gradient;
-            });
-        });
-    </script>
 </body>
 </html>
