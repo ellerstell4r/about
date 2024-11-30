@@ -70,8 +70,14 @@
             margin-bottom: 10px;
         }
 
-        .title span {
-            color: #722929;
+        .title span,
+        .description a.tdn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff0000, #00ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: background 0.3s ease;
+            text-decoration: none;
         }
 
         .tags {
@@ -104,12 +110,7 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
-
-        .description a {
-            color: #722929;
-            text-decoration: none;
-        }
-
+        
         .actions {
             display: flex;
             gap: 10px;
@@ -154,5 +155,16 @@
             <a href="https://discord.com/users/1264934627660005448" target="_blank" class="button">Discord</a>
         </div>
     </div>
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const x = event.clientX / window.innerWidth * 100;
+            const y = event.clientY / window.innerHeight * 100;
+
+            const gradient = `linear-gradient(${x + y}deg, #ff0000, #00ff00)`;
+            document.querySelectorAll('.title span, .description a.tdn').forEach(el => {
+                el.style.background = gradient;
+            });
+        });
+    </script>
 </body>
 </html>
