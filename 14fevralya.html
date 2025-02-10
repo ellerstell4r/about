@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            opacity: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(5, 5, 5, 0.1);
+            backdrop-filter: blur(10px);
+            border: 0.5px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            padding: 30px;
+            width: 500px;
+            border: 0.5px solid #1a1a1a;
+            text-align: left;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.075);
+        }
+
+        .container:hover {
+            transform: scale(1.01);
+            filter: blur(0.75px);
+        }
+
+        
+
+        .title span,
+        .description a.tdn {
+            display: inline-block;
+            background: linear-gradient(90deg, #722929, #491818);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .emoji-btn {
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .emoji-btn:active {
+            transform: scale(1.25);
+            filter: blur(2.5px);
+        }
+
+        .confetti {
+            position: absolute;
+            font-size: 20px;
+            opacity: 1;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="description">
+            С 14 февраля.
+        </div>
+        <div class="emoji-btn" onclick="explode(event)">🎉</div>
+    </div>
+
+    <script>
+        function explode(event) {
+            const emoji = event.target;
+            
+            setTimeout(() => {
+                emoji.style.transform = '';
+                emoji.style.filter = '';
+            }, 0);
+    
+            for (let i = 0; i < 15; i++) {
+                let confetti = document.createElement('div');
+                confetti.innerText = '🎉';
+                confetti.className = 'confetti';
+                document.body.appendChild(confetti);
+    
+                let x = (Math.random() - 0.5) * 400;
+                let y = (Math.random() - 0.5) * 400;
+                let rotate = Math.random() * 720;
+                let scale = Math.random() * 0.8 + 0.5; 
+    
+                confetti.style.left = `${event.clientX}px`;
+                confetti.style.top = `${event.clientY}px`;
+                confetti.style.transform = `scale(${scale})`;
+    
+                requestAnimationFrame(() => {
+                    confetti.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+                    confetti.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg) scale(${scale})`;
+                    confetti.style.opacity = '0';
+                });
+    
+                setTimeout(() => confetti.remove(), 1000);
+            }
+        }
+    </script>    
+</body>
+</html>
