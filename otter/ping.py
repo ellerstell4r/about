@@ -4,7 +4,7 @@ import time
 
 asb = AntiSpamBlock()
 
-async def ping_ip_list(message, client, id):
+async def ping_ip_list(message, client):
     ip_list = [
         "149.154.175.53",
         "149.154.167.51",
@@ -31,7 +31,7 @@ async def ping_ip_list(message, client, id):
 
     result_text = "\n".join(ping_results)
     full_result_text = f"⏰: {full_ping_duration} ms\n{result_text}"
-    await asb.fast_edit(message, client, id, full_result_text)
+    await asb.fast_edit(message, client, full_result_text)
 
 def register_commands(custom_commands):
     custom_commands['pingdcs'] = (ping_ip_list, "Проверить пинг телеграма. (DC Серверов)")
