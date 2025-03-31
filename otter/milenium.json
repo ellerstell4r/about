@@ -4,7 +4,8 @@
         "description": "Пингует все DC телеграма.",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/ping.png",
-        "main": "https://notype.ru/otter/ping.py"
+        "main": "https://notype.ru/otter/ping.py",
+        "license": "Нету."
     }, 
 
     "rp_commands": {
@@ -12,7 +13,8 @@
         "description": "Рп команды, почти, как в @iris_cm_bot!",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/rp_commands.png",
-        "main": "https://notype.ru/otter/rp_commands.py"
+        "main": "https://notype.ru/otter/rp_commands.py",
+        "license": "Нету."
     },
 
     "cably": {
