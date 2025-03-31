@@ -20,6 +20,7 @@
         "description": "GPT-4o через CablyAI.",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/cably.png",
-        "main": "https://notype.ru/otter/cably.py"
+        "main": "https://notype.ru/otter/cably.py",
+        "license": "https://github.com/mead0wsss/mead0wsMods/blob/modules/LICENSE.md"
     }
 }
