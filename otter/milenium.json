@@ -1,0 +1,12 @@
+{
+    "ping": {
+        "author": "eachcart",
+        "description": "Пингует все DC телеграма.",
+        "version": "1.0.0",
+        "commands": {
+            "pingdcs": "Проверить пинг телеграма. (DC Серверов)"
+        },
+        "placeholder_image": "https://notype.ru/otter/ping.png",
+        "main": ""
+    }
+}
