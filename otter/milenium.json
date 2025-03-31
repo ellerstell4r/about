@@ -13,5 +13,13 @@
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/rp_commands.png",
         "main": "https://notype.ru/otter/rp_commands.py"
+    },
+
+    "cably": {
+        "author": "eachcart, mead0wsss",
+        "description": "GPT-4o через CablyAI.",
+        "version": "1.0.0",
+        "placeholder_image": "https://notype.ru/otter/cably.png",
+        "main": "https://notype.ru/otter/cably.py"
     }
 }
