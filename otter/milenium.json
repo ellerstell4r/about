@@ -3,10 +3,15 @@
         "author": "eachcart",
         "description": "Пингует все DC телеграма.",
         "version": "1.0.0",
-        "commands": {
-            "pingdcs": "Проверить пинг телеграма. (DC Серверов)"
-        },
         "placeholder_image": "https://notype.ru/otter/ping.png",
         "main": "https://notype.ru/otter/ping.py"
+    }, 
+
+    "rp_commands": {
+        "author": "eachcart",
+        "description": "Рп команды, почти, как в @iris_cm_bot!",
+        "version": "1.0.0",
+        "placeholder_image": "https://notype.ru/otter/rp_commands.png",
+        "main": "https://notype.ru/otter/rp_commands.py"
     }
 }
