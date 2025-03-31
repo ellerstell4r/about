@@ -5,7 +5,7 @@
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/ping.png",
         "main": "https://notype.ru/otter/ping.py",
-        "license": "Нету."
+        "license": "Нету"
     }, 
 
     "rp_commands": {
@@ -14,7 +14,7 @@
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/otter/rp_commands.png",
         "main": "https://notype.ru/otter/rp_commands.py",
-        "license": "Нету."
+        "license": "Нету"
     },
 
     "cably": {
