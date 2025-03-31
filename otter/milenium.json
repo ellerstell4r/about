@@ -7,6 +7,6 @@
             "pingdcs": "Проверить пинг телеграма. (DC Серверов)"
         },
         "placeholder_image": "https://notype.ru/otter/ping.png",
-        "main": "https://raw.githubusercontent.com/eachcart/about/refs/heads/main/otter/ping.py"
+        "main": "https://notype.ru/otter/ping.py"
     }
 }
