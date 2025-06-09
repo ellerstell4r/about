@@ -1,1 +1,424 @@
-<3
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --text-secondary: rgba(0, 0, 0, 0.7);
+            --text-tertiary: rgba(0, 0, 0, 0.5);
+            --card-bg: rgba(0, 0, 0, 0.05);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --card-hover-bg: rgba(0, 0, 0, 0.05);
+            --card-hover-border: rgba(0, 0, 0, 0.15);
+            --skill-bg: rgba(0, 0, 0, 0.03);
+            --skill-hover-bg: rgba(0, 0, 0, 0.08);
+            --social-bg: rgba(0, 0, 0, 0.05);
+            --social-hover-bg: rgba(0, 0, 0, 0.15);
+            --dot-color: rgba(0, 0, 0, 0.1);
+            --glow-color: rgba(0, 0, 0, 0.05);
+            --accent-gradient: linear-gradient(45deg, #838383, #2c2c2c);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-hover-bg: rgba(255, 255, 255, 0.025);
+            --card-hover-border: rgba(255, 255, 255, 0.125);
+            --skill-bg: rgba(255, 255, 255, 0.05);
+            --skill-hover-bg: rgba(255, 255, 255, 0.1);
+            --social-bg: rgba(255, 255, 255, 0.1);
+            --social-hover-bg: rgba(255, 255, 255, 0.2);
+            --dot-color: rgba(255, 255, 255, 0.25);
+            --glow-color: rgba(255, 255, 255, 0.1);
+            --accent-gradient: linear-gradient(45deg, #2c2c2c, #838383);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .bg-dots {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            pointer-events: none;
+            z-index: 1;
+            animation: moveGroupUpLeft 30s linear infinite;
+        }
+
+        .dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--dot-color);
+            border-radius: 50%;
+        }
+
+        @keyframes moveGroupUpLeft {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .bio-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-card::before {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .bio-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--card-hover-bg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 25px;
+        }
+
+        .bio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-card:hover::after {
+            opacity: 1;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 2px solid var(--card-border);
+            transition: all 0.3s ease;
+            background: var(--skill-bg);
+            font-size: 32px;
+            color: var(--text-secondary);
+            z-index: 10;
+        }
+
+        .user-info {
+            text-align: left;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .name .accent {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            background: var(--social-bg);
+            border-radius: 15px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            gap: 5px;
+            border: 1px solid var(--card-border);
+        }
+
+        .social-link:hover {
+            background: var(--social-hover-bg);
+            color: var(--text-secondary);
+            transform: translateY(-3px);
+            border-color: var(--card-hover-border);
+        }
+
+        .skills {
+            text-align: left;
+            position: relative;
+            z-index: 10;
+        }
+
+        .skills-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+            background: var(--skill-bg);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .skill-item:hover {
+            background: var(--skill-hover-bg);
+            transform: translateY(-5px);
+            border-color: var(--card-hover-border);
+        }
+
+        .skill-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .skill-name {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--social-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0.25;
+            font-size: 20px;
+            color: var(--text-color);
+        }
+
+        .theme-toggle:hover {
+            opacity: 1;
+            background: var(--social-hover-bg);
+            border-color: var(--card-hover-border);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            .bio-card {
+                padding: 30px 20px;
+                margin: 20px 10px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-dots" id="bgDots"></div>
+    <div class="container">
+        <div class="bio-card">
+            <img src="avatar.jpeg" class="avatar"></img>
+            <div class="user-info">
+                <h1 class="name">Привет, я <span class="accent">eachcart</span>!</h1>
+                <p class="description">
+                    Мне 14, я знаю языки разметки HTML, CSS и языки программирования JS, Python, я родился 31.01.2011. В текущее время я занят учебой и рассматриваю новый язык для моих проектов - Crystal.
+                </p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://t.me/eachcart" target="_blank" class="social-link"><i class="fab fa-telegram" style="margin-top: 5px; margin-bottom: 5px;"></i></a>
+                <a href="https://discord.com/users/1264934627660005448" target="_blank" class="social-link"><i class="fab fa-discord" style="margin-top: 5px; margin-bottom: 5px;"></i></a>
+                <a href="https://github.com/eachcart" target="_blank" class="social-link"><i class="fab fa-github" style="margin-top: 5px; margin-bottom: 5px;"></i></a>
+            </div>
+
+            <div class="skills">
+                <h3 class="skills-title">Навыки</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-python skill-icon"></i>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-gem skill-icon"></i>
+                        <span class="skill-name">Crystal</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-figma skill-icon"></i>
+                        <span class="skill-name">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+    <script>
+        function createDots() {
+            const dotsContainer = document.getElementById('bgDots');
+            const margin = 40;
+            const cols = Math.ceil(window.innerWidth * 2 / margin);
+            const rows = Math.ceil(window.innerHeight * 2 / margin);
+
+            dotsContainer.innerHTML = '';
+
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    dot.style.left = (col * margin) + 'px';
+                    dot.style.top = (row * margin) + 'px';
+                    
+                    dotsContainer.appendChild(dot);
+                }
+            }
+        }
+
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const body = document.body;
+            
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            body.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (theme === 'light') {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createDots();
+            initThemeToggle();
+        });
+
+        window.addEventListener('resize', () => {
+            const dotsContainer = document.getElementById('bgDots');
+            dotsContainer.innerHTML = '';
+            createDots();
+        });
+    </script>
+</body>
+</html>
