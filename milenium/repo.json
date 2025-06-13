@@ -1,0 +1,10 @@
+{
+    "nextlib": {
+        "author": "eachcart",
+        "description": "Небольшая скромная библиотека для ваших проектов.",
+        "version": "1.0.0",
+        "placeholder_image": "https://notype.ru/milenium/nextlib.png",
+        "main": "https://notype.ru/milenium/nextlib.py",
+        "license": "Свободная"
+    }
+}
