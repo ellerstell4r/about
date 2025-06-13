@@ -9,7 +9,7 @@
     },
     "util": {
         "author": "eachcart",
-        "description": "Команды такие как uptime и ping, нужны только практически для красоты.",
+        "description": "Команды такие как uptime и ping, нужны только практически для красоты. (Необходим NextLib)",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/milenium/util.png",
         "main": "https://notype.ru/milenium/util.py",
