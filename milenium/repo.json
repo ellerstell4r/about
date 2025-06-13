@@ -6,5 +6,13 @@
         "placeholder_image": "https://notype.ru/milenium/nextlib2.png",
         "main": "https://notype.ru/milenium/nextlib.py",
         "license": "Свободная"
+    },
+    "util": {
+        "author": "eachcart",
+        "description": "Команды такие как uptime и ping, нужны только практически для красоты.",
+        "version": "1.0.0",
+        "placeholder_image": "https://notype.ru/milenium/util.png",
+        "main": "https://notype.ru/milenium/util.py",
+        "license": "Свободная"
     }
 }
