@@ -8,10 +8,10 @@ class Information:
     icon = ""
     banner = ""
 
-try:
-    from Luminate.Modules.nextlib import Utils
-except ImportError:
-    raise ImportError(f"Модуль не может быть загружен: требуется NextLib. Установите его через @modlumi.")
+class Utils:
+    @staticmethod
+    def emoji(num: int, emoji: str):
+        return f"<emoji id='{num}'>{emoji}</emoji>"
 
 class Module:
     def __init__(self, commands, lumi, restart, get_uptime, prefix):
