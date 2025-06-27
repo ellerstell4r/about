@@ -1,15 +1,15 @@
 {
-    "nextlib": {
+    "lumifetch": {
         "author": "ellerstell4r",
-        "description": "Небольшая скромная библиотека для ваших проектов.",
+        "description": "Lumifetch, neofetch-подобный модуль.",
         "version": "1.0.0",
-        "placeholder_image": "https://notype.ru/milenium/nextlib2.png",
-        "main": "https://notype.ru/milenium/nextlib.py",
+        "placeholder_image": "https://notype.ru/milenium/lumifetch.png",
+        "main": "https://notype.ru/milenium/lumifetch.py",
         "license": "Свободная"
     },
     "util": {
         "author": "ellerstell4r",
-        "description": "Команды такие как uptime и ping, нужны только практически для красоты. (Необходим NextLib)",
+        "description": "Команды такие как uptime и ping, нужны только практически для красоты.",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/milenium/util.png",
         "main": "https://notype.ru/milenium/util.py",
