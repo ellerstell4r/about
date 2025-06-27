@@ -3,7 +3,7 @@ import time, os
 class Information:
     name = "Дополнительные команды"
     description = "Дополнительные команды (Необходим NextLib)"
-    author = "eachcart"
+    author = "ellerstell4r"
     version = "1.0.0"
     icon = ""
     banner = ""
