@@ -8,7 +8,7 @@
         "license": "Свободная"
     },
     "util": {
-        "author": "eachcart",
+        "author": "ellerstell4r",
         "description": "Команды такие как uptime и ping, нужны только практически для красоты. (Необходим NextLib)",
         "version": "1.0.0",
         "placeholder_image": "https://notype.ru/milenium/util.png",
